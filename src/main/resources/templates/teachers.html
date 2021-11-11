@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/main.css">
+    <meta charset="UTF-8">
+    <title>Teacher's room</title>
+</head>
+<body>
+
+<table>
+    <tr>
+    <td>
+        Список учетелей школа № <span th:text="${schoolNumber}"></span>
+    </td>
+    </tr>
+</table>
+<br/>
+<a href="/">Вернуться на главную страницу</a>
+<br/>
+<table>
+    <tr>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Отчество</th>
+    </tr>
+    <tr th:each="teacher: ${teachers}">
+        <td th:text="${teacher.getSurName()}"></td>
+        <td th:text="${teacher.getFirstName()}"></td>
+        <td th:text="${teacher.getPatronymic()}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

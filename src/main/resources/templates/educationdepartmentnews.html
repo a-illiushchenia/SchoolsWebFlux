@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/main.css">
+    <meta charset="UTF-8">
+    <title>Новости отдела образования</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Новости отдела образования</th>
+    </tr>
+</table>
+<br/>
+<a href="/">Вернуться на главную страницу</a>
+<br/>
+<table>
+    <tr th:each="news: ${news}">
+        <td>
+            <span th:text="${news.getTitle()}" style="font-weight: bold"></span>
+            <br/>
+            <span th:text="${news.getBody()}"></span>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

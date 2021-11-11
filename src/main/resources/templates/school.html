@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/main.css">
+    <meta charset="UTF-8">
+    <title>Школа</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Школа № <span th:text="${school.number}"></span></td>
+    </tr>
+    <tr>
+        <td>
+            <a
+                    th:href=
+                            "@{/teachers?schoolId={schoolId}&schoolNumber={schoolNumber}
+                    (schoolId=${school.getId()},schoolNumber=${school.getNumber()})}">
+                Учительская
+            </a>
+            <br/>
+            <a>Расписание</a>
+            <br/><br/>
+            <a href="/">Вернуться на главную страницу</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
